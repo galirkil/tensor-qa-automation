@@ -3,7 +3,7 @@ from selenium.webdriver.common.by import By
 
 class Urls:
     SBIS_MAIN_URL = 'https://sbis.ru/'
-    TENZOR_ABOUT_URL = 'https://tensor.ru/about'
+    TENSOR_ABOUT_URL = 'https://tensor.ru/about'
 
 
 class SbisMainPageLocators:
@@ -16,7 +16,7 @@ class SbisMainPageLocators:
 
 
 class SbisContacsPageLocators:
-    TENZOR_BANNER = (By.CSS_SELECTOR, '#contacts_clients a[title="tensor.ru"]')
+    TENSOR_BANNER = (By.CSS_SELECTOR, '#contacts_clients a[title="tensor.ru"]')
     CHANGE_REGION_BUTTON = (
         By.CSS_SELECTOR,
         '.sbisru-Contacts__relative .sbis_ru-Region-Chooser__text'
@@ -50,7 +50,7 @@ class SbisDownloadPageLocators:
     )
 
 
-class TenzorMainPageLocators:
+class TensorMainPageLocators:
     CLOSE_COOKIE_AGREEMENT_NOTIFICATION = (
         By.CLASS_NAME,
         'tensor_ru-CookieAgreement__close'
@@ -65,5 +65,5 @@ class TenzorMainPageLocators:
     )
 
 
-class TenzorAboutPageLocators:
+class TensorAboutPageLocators:
     RABOTAEM_BLOCK_IMAGES = (By.CLASS_NAME, 'tensor_ru-About__block3-image')
