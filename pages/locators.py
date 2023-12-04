@@ -29,6 +29,10 @@ class SbisContacsPageLocators:
         'name': 'Республика Татарстан',
         'slug': '16-respublika-tatarstan',
     }
+    MOSCOW_REGION_INFO = {
+        'name': 'г. Москва',
+        'slug': '77-moskva',
+    }
     KAMCHATKA_REGION_INFO = {
         'name': 'Камчатский край',
         'slug': '41-kamchatskij-kraj',
