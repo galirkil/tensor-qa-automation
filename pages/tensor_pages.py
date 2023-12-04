@@ -1,3 +1,6 @@
+from selenium.webdriver.support import expected_conditions as ec
+from selenium.webdriver.support.ui import WebDriverWait
+
 from pages.base_page import BasePage
 from pages.locators import (TensorAboutPageLocators, TensorMainPageLocators,
                             Urls)
@@ -5,8 +8,10 @@ from pages.locators import (TensorAboutPageLocators, TensorMainPageLocators,
 
 class TensorMainPage(BasePage):
     def close_cookie_agreement_notification(self):
-        self.driver.find_element(
-            *TensorMainPageLocators.CLOSE_COOKIE_AGREEMENT_NOTIFICATION
+        WebDriverWait(self.driver, 5).until(
+            ec.visibility_of_element_located(
+                TensorMainPageLocators.CLOSE_COOKIE_AGREEMENT_NOTIFICATION
+            )
         ).click()
 
     def should_be_sila_v_lyudyah_block(self):
