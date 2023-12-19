@@ -111,8 +111,13 @@ class SbisDownloadPage(BasePage):
         file_path = f'{BASE_DIR}/{file_name}'
         expected_size = float(download_element.text.split()[-2])
         try:
-            while not os.path.exists(file_path):
+            counter = 0
+            while counter != 20 and not os.path.exists(file_path):
                 time.sleep(0.5)
+                counter += 0.5
+            assert os.path.exists(file_path), (
+                'Expected file have not been downloaded in 20 seconds'
+            )
             f_size = round(os.path.getsize(file_path) / 1048576, 2)
             assert f_size == expected_size, (
                 f'Wrong file size! Expected {expected_size}, got {f_size}'
